@@ -1,9 +1,30 @@
-package br.univille;
+package br.univille.entity;
+import java.util.ArrayList;
 
 public class Cliente {
     //variável - atributo
+    private long id;
     private String nome;
+    private String endereco;
+    
+    private ArrayList listaPokemon = new ArrayList();
 
+    public ArrayList getListaPokemon(){
+        return listaPokemon;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
     //construtor - mesmo nome da classe e não te retorno
     // inicializar atributos
     // obrigar a passagem de valores
