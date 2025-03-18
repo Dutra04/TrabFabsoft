@@ -12,14 +12,6 @@
 
 <s>
 
-- Nome do sistema Ex:(Sistema para Mecânica)
-  - Funcionalidade 1
-  - Funcionalidade 2
-  - Funcionalidade 3
-
-</s>
-
-
 ## Livro Eng Software Moderna
 [Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
 
