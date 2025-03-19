@@ -5,10 +5,11 @@
 
 ## Propostas de projeto
 
-- Nome do sistema Ex:(Sistema para Mecânica)
-  - Funcionalidade 1
-  - Funcionalidade 2
-  - Funcionalidade 3
+- Nome do sistema: Sistema de Gestão de Finanças
+  - Registro de Transações: Adicionar entradas e saídas com valor, data, descrição e categoria
+  - Categorização: Permitir que o usuário crie e gerencie categorias 
+  - Relatórios: Exibir saldo total e gastos por categoria 
+  - Armazenagem de Dados: Salvar os Dados em um arquivo (ex: JSON, CSV ou banco de dados SQLite)
 
 <s>
 
