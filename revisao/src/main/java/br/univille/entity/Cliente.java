@@ -6,11 +6,23 @@ public class Cliente {
     private long id;
     private String nome;
     private String endereco;
+    private Cidade cidade;
     
-    private ArrayList listaPokemon = new ArrayList();
+    
+    public Cidade getCidade() {
+        return cidade;
+    }
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
 
-    public ArrayList getListaPokemon(){
+    private ArrayList<Pokemon> listaPokemon = new ArrayList<Pokemon>();  // <> operador diamante
+
+    public ArrayList<Pokemon> getListaPokemon(){
         return listaPokemon;
+    }
+    public void setListaPokemon(ArrayList<Pokemon> listaPokemon){
+        this.listaPokemon = listaPokemon;
     }
 
     public String getEndereco() {
