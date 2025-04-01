@@ -9,7 +9,7 @@
   - Registro de Transações: Adicionar entradas e saídas com valor, data, descrição e categoria
   - Categorização: Permitir que o usuário crie e gerencie categorias 
   - Relatórios: Exibir saldo total e gastos por categoria 
-  - Armazenagem de Dados: Salvar os Dados em um arquivo (ex: JSON, CSV ou banco de dados SQLite)
+  - Armazenagem de Dados: Salvar os Dados em um arquivo 
 
 <s>
 
@@ -17,9 +17,10 @@
 [Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
 
 ## Histórias de Usuário
-- Como um Atendente eu gostaria de registrar os dados do cliente como: nome, endereço, telefone, email
-- Como um Atendente eu gostaria de registrar os dados do Carro do cliente como: marca, modelo, placa
-- Como um Atendente eu gostaria de vincular o Carro ao Cliente
+- Como um Usuário eu gostaria de registrar os meus dados do como: nome, endereço, telefone, email
+- Como um Usuário eu gostaria de registrar os dados de Transações como: valores de entradas, valores de saídas, data, descrição e categoria
+- Como um Usuário eu gostaria de criar e gerenciar as categorias
+- Como um Usuário eu gostaria extrair relatório do saldo total
 
 ## Comandos do Git
 
