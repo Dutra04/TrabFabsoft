@@ -17,10 +17,15 @@
 [Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
 
 ## Histórias de Usuário
-- Como um Usuário eu gostaria de registrar os meus dados do como: nome, endereço, telefone, email
-- Como um Usuário eu gostaria de registrar os dados de Transações como: valores de entradas, valores de saídas, data, descrição e categoria
-- Como um Usuário eu gostaria de criar e gerenciar as categorias
-- Como um Usuário eu gostaria extrair relatório do saldo total
+- Como um Usuário, eu gostaria de registrar os meus dados do como: nome, endereço, telefone, email
+- Como um Usuário, eu gostaria de registrar os dados de Transações como: valores de entradas, valores de saídas, data, descrição e categoria
+- Como um Usuário, eu gostaria de criar e gerenciar as categorias
+- Como um Usuário, eu gostaria extrair relatório do saldo total
+- Como um Usuário, eu gostaria de visualizar todas as transações registradas em uma lista
+- Como um Usuário, eu gostaria de editar ou excluir uma transação já registrada
+- Como um Usuário, eu gostaria de ver o saldo detalhado por categoria em um relatório
+- Como um Usuário, eu gostaria de carregar os dados salvos ao abrir o programa
+- Como um Usuário, eu gostaria de simular o impacto de um gasto extra no meu saldo em um mês específico
 
 ## Comandos do Git
 
