@@ -1,6 +1,9 @@
 package br.univille.projfabsoftcashflow.entity;
 
-public class Usuario {
+import jakarta.persistence.Entity;
+
+@Entity
+public class Cliente {
     private Long id;
     private String nome;
     private String endereco;

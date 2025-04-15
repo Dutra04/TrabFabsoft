@@ -3,11 +3,23 @@ package br.univille.projfabsoftcashflow.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Transacao {
+    private Long id;
     private BigDecimal valor;
     private LocalDate data;
     private String descricao;
     private Categoria categoria;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public BigDecimal getValor() {
         return valor;
