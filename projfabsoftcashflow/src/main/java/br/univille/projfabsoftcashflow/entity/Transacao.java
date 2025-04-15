@@ -7,17 +7,17 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class Transacao {
-    private Long id;
+    private long id;
     private BigDecimal valor;
     private LocalDate data;
     private String descricao;
     private Categoria categoria;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

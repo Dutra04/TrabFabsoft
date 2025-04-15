@@ -7,15 +7,15 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class Simulacao {
-    private Long id;
+    private long id;
     private BigDecimal impactoGastoExtra;
     private LocalDate mesReferencia;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
