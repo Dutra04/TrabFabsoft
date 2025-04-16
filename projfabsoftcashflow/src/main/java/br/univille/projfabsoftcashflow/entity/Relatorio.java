@@ -4,9 +4,14 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Relatorio {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private long id;
     private BigDecimal saldoTotal;
     private Map<String, BigDecimal> saldoPorCategoria;

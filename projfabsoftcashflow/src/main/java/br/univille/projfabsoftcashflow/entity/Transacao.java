@@ -4,13 +4,19 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Transacao {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private BigDecimal valor;
     private LocalDate data;
     private String descricao;
+    
     private Categoria categoria;
 
     public long getId() {
