@@ -8,5 +8,5 @@ import br.univille.projfabsoftcashflow.entity.Cliente;
 @Repository
 public interface ClienteRepository
     extends JpaRepository<Cliente,Long> {
-
+        
 }

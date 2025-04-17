@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Categoria {
@@ -15,6 +16,8 @@ public class Categoria {
     private String nome;
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private Relatorio relatorio;
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    private Transacao transacao;
 
     public Relatorio getRelatorio() {
         return relatorio;
