@@ -13,8 +13,10 @@ public class Cliente {
     private long id;
     @Column(length = 1000, nullable = false)
     private String nome;
+    @Column(length = 1000, nullable = false)
     private String endereco;
     private String telefone;
+    @Column(length = 1000, nullable = false)   
     private String email;
 
     public long getId() {

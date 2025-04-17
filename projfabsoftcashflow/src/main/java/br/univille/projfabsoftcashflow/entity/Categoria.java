@@ -1,9 +1,11 @@
 package br.univille.projfabsoftcashflow.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Categoria {
@@ -11,6 +13,16 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private long id;
     private String nome;
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    private Relatorio relatorio;
+
+    public Relatorio getRelatorio() {
+        return relatorio;
+    }
+
+    public void setRelatorio(Relatorio relatorio) {
+        this.relatorio = relatorio;
+    }
 
     public long getId() {
         return id;
