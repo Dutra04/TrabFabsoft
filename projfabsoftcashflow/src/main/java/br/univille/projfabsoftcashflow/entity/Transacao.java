@@ -1,7 +1,8 @@
 package br.univille.projfabsoftcashflow.entity;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -9,14 +10,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private BigDecimal valor;
-    private LocalDate data;
+    private float valor;
+    @Temporal(TemporalType.TIMESTAMP)    
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    private Date data;
     private String descricao;
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private Cliente cliente;
@@ -39,19 +44,19 @@ public class Transacao {
         this.id = id;
     }
 
-    public BigDecimal getValor() {
+    public float getValor() {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
 
-    public LocalDate getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(Date data) {
         this.data = data;
     }
 

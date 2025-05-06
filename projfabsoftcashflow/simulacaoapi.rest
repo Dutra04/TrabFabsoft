@@ -1,0 +1,25 @@
+### API SIMULAÇÃO - GET
+GET http://localhost:8080/api/v1/simulacoes
+
+### API SIMULAÇÃO - POST
+POST http://localhost:8080/api/v1/simulacoes
+Content-Type: application/json
+
+{
+    "id": 0,
+    "impactoGastoExtra": 200.00,
+    "mesReferencia": "2023-12-01T00:00:00"
+}
+
+### API SIMULAÇÃO - PUT
+PUT http://localhost:8080/api/v1/simulacoes/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "impactoGastoExtra": 250.00,
+    "mesReferencia": "2023-12-01T00:00:00"
+}
+
+### API SIMULAÇÃO - DELETE
+DELETE http://localhost:8080/api/v1/simulacoes/1

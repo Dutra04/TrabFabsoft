@@ -1,0 +1,23 @@
+### API CATEGORIA - GET
+GET http://localhost:8080/api/v1/categoria
+
+### API CATEGORIA - POST
+POST http://localhost:8080/api/v1/categoria
+Content-Type: application/json
+
+{
+    "id": 0,
+    "nome": "Saldo Total"
+}
+
+### API CATEGORIA - PUT
+PUT http://localhost:8080/api/v1/categoria/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "nome": "Saldo Atualizado"
+}
+
+### API CATEGORIA - DELETE
+DELETE http://localhost:8080/api/v1/categoria/1

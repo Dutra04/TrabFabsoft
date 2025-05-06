@@ -1,20 +1,25 @@
 package br.univille.projfabsoftcashflow.entity;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 public class Simulacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private BigDecimal impactoGastoExtra;
-    private LocalDate mesReferencia;
+    private float impactoGastoExtra;
+    @Temporal(TemporalType.TIMESTAMP)    
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    private Date mesReferencia;
 
     public long getId() {
         return id;
@@ -24,19 +29,19 @@ public class Simulacao {
         this.id = id;
     }
 
-    public BigDecimal getImpactoGastoExtra() {
+    public float getImpactoGastoExtra() {
         return impactoGastoExtra;
     }
 
-    public void setImpactoGastoExtra(BigDecimal impactoGastoExtra) {
+    public void setImpactoGastoExtra(float impactoGastoExtra) {
         this.impactoGastoExtra = impactoGastoExtra;
     }
 
-    public LocalDate getMesReferencia() {
+    public Date getMesReferencia() {
         return mesReferencia;
     }
 
-    public void setMesReferencia(LocalDate mesReferencia) {
+    public void setMesReferencia(Date mesReferencia) {
         this.mesReferencia = mesReferencia;
     }
 }
