@@ -10,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
@@ -33,7 +35,7 @@ public class Transacao {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-
+    @OneToOne
     private Categoria categoria;
 
     public long getId() {

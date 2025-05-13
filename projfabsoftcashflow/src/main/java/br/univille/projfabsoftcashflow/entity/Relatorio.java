@@ -1,13 +1,13 @@
 package br.univille.projfabsoftcashflow.entity;
 
-import java.util.Map;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import java.util.Map;
+import jakarta.persistence.ElementCollection;
 
 @Entity
 public class Relatorio {
@@ -15,9 +15,10 @@ public class Relatorio {
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private long id;
     private float saldoTotal;
-    private Map<String, Float> saldoPorCategoria;
     @OneToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private Simulacao simulacao;
+    @ElementCollection
+    private Map<String, Float> saldoPorCategoria;
 
     public Simulacao getSimulacao() {
         return simulacao;
