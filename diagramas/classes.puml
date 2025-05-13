@@ -1,13 +1,13 @@
 @startuml
 package br.univille.projfabsoftcashflow.entity {
     class Cliente {
-        - Long id
+        - long id
         - String nome
         - String endereco
         - String telefone
         - String email
-        + Long getId()
-        + void setId(Long id)
+        + long getId()
+        + void setId(long id)
         + String getNome()
         + void setNome(String nome)
         + String getEndereco()
@@ -19,70 +19,66 @@ package br.univille.projfabsoftcashflow.entity {
     }
 
     class Categoria {
+        - long id
         - String nome
+        - Relatorio relatorio
+        - Transacao transacao
+        + long getId()
+        + void setId(long id)
         + String getNome()
         + void setNome(String nome)
+        + Relatorio getRelatorio()
+        + void setRelatorio(Relatorio relatorio)
+        + Transacao getTransacao()
+        + void setTransacao(Transacao transacao)
     }
 
     class Transacao {
-        - BigDecimal valor
-        - LocalDate data
+        - long id
+        - float valor
+        - Date data
         - String descricao
+        - Cliente cliente
         - Categoria categoria
-        + BigDecimal getValor()
-        + void setValor(BigDecimal valor)
-        + LocalDate getData()
-        + void setData(LocalDate data)
+        + long getId()
+        + void setId(long id)
+        + float getValor()
+        + void setValor(float valor)
+        + Date getData()
+        + void setData(Date data)
         + String getDescricao()
         + void setDescricao(String descricao)
+        + Cliente getCliente()
+        + void setCliente(Cliente cliente)
         + Categoria getCategoria()
         + void setCategoria(Categoria categoria)
     }
 
     class Relatorio {
-        - BigDecimal saldoTotal
-        - Map<String, BigDecimal> saldoPorCategoria
-        + BigDecimal getSaldoTotal()
-        + void setSaldoTotal(BigDecimal saldoTotal)
-        + Map<String, BigDecimal> getSaldoPorCategoria()
-        + void setSaldoPorCategoria(Map<String, BigDecimal> saldoPorCategoria)
+        - long id
+        - float saldoTotal
+        - Map<String, Float> saldoPorCategoria
+        - Simulacao simulacao
+        + long getId()
+        + void setId(long id)
+        + float getSaldoTotal()
+        + void setSaldoTotal(float saldoTotal)
+        + Map<String, Float> getSaldoPorCategoria()
+        + void setSaldoPorCategoria(Map<String, Float> saldoPorCategoria)
+        + Simulacao getSimulacao()
+        + void setSimulacao(Simulacao simulacao)
     }
 
     class Simulacao {
-        - BigDecimal impactoGastoExtra
-        - LocalDate mesReferencia
-        + BigDecimal getImpactoGastoExtra()
-        + void setImpactoGastoExtra(BigDecimal impactoGastoExtra)
-        + LocalDate getMesReferencia()
-        + void setMesReferencia(LocalDate mesReferencia)
-    }
-}
-
-package br.univille.projfabsoftcashflow.repository {
-    interface ClienteRepository {
-        + save(Cliente cliente)
-        + findAll(): List<Cliente>
-        + findById(Long id): Optional<Cliente>
-        + deleteById(Long id)
-    }
-}
-
-package br.univille.projfabsoftcashflow.service {
-    interface ClienteService {
-        + Cliente save(Cliente cliente)
-        + List<Cliente> getAll()
-        + Cliente getById(Long id)
-        + Cliente delete(Long id)
-    }
-}
-
-package br.univille.projfabsoftcashflow.service.impl {
-    class ClienteServiceImpl {
-        - ClienteRepository repository
-        + Cliente save(Cliente cliente)
-        + List<Cliente> getAll()
-        + Cliente getById(Long id)
-        + Cliente delete(Long id)
+        - long id
+        - float impactoGastoExtra
+        - Date mesReferencia
+        + long getId()
+        + void setId(long id)
+        + float getImpactoGastoExtra()
+        + void setImpactoGastoExtra(float impactoGastoExtra)
+        + Date getMesReferencia()
+        + void setMesReferencia(Date mesReferencia)
     }
 }
 
@@ -90,6 +86,4 @@ Cliente "1" --> "*" Transacao : "realiza"
 Transacao "1" --> "1" Categoria : "pertence a"
 Relatorio "1" --> "*" Categoria : "detalha"
 Simulacao "1" --> "1" Relatorio : "baseada em"
-ClienteServiceImpl ..|> ClienteService
-ClienteServiceImpl --> ClienteRepository : "usa"
 @enduml

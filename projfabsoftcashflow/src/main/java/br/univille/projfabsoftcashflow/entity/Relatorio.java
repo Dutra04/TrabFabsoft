@@ -1,10 +1,8 @@
 package br.univille.projfabsoftcashflow.entity;
 
-import java.math.BigDecimal;
 import java.util.Map;
 
 import jakarta.persistence.CascadeType;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,8 +14,8 @@ public class Relatorio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private long id;
-    private BigDecimal saldoTotal;
-    private Map<String, BigDecimal> saldoPorCategoria;
+    private float saldoTotal;
+    private Map<String, Float> saldoPorCategoria;
     @OneToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private Simulacao simulacao;
 
@@ -37,19 +35,19 @@ public class Relatorio {
         this.id = id;
     }
 
-    public BigDecimal getSaldoTotal() {
+    public float getSaldoTotal() {
         return saldoTotal;
     }
 
-    public void setSaldoTotal(BigDecimal saldoTotal) {
+    public void setSaldoTotal(float saldoTotal) {
         this.saldoTotal = saldoTotal;
     }
 
-    public Map<String, BigDecimal> getSaldoPorCategoria() {
+    public Map<String, Float> getSaldoPorCategoria() {
         return saldoPorCategoria;
     }
 
-    public void setSaldoPorCategoria(Map<String, BigDecimal> saldoPorCategoria) {
+    public void setSaldoPorCategoria(Map<String, Float> saldoPorCategoria) {
         this.saldoPorCategoria = saldoPorCategoria;
     }
 }
