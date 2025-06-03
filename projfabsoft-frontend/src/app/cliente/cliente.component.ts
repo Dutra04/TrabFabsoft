@@ -8,7 +8,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-cliente',
   imports: [HttpClientModule, CommonModule],
   templateUrl: './cliente.component.html',
-  styleUrl: './cliente.component.css'
+  styleUrl: './cliente.component.css',
+  providers: [ClienteService]
 })
 export class ClienteComponent {
     listaClientes: Cliente[] = [];
