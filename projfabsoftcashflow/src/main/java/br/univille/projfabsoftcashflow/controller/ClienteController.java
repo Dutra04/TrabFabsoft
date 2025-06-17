@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
+
 @RestController
 @RequestMapping("/api/v1/clientes")
 public class ClienteController {
@@ -31,6 +32,16 @@ public class ClienteController {
 
         return new ResponseEntity<List<Cliente>>(listaClientes, HttpStatus.OK);
     }
+
+    @GetMapping("/{id}")
+        public ResponseEntity<Cliente> getClinteId(@PathVariable long id){
+            var umCliente = service.getById(id);
+
+            return new ResponseEntity<Cliente>(umCliente, HttpStatus.OK);
+        }
+    
+    
+    
 
     @PostMapping
     public ResponseEntity<Cliente> postCliente(@RequestBody Cliente cliente){
