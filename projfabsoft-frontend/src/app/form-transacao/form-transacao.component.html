@@ -1,1 +1,34 @@
-<p>form-transacao works!</p>
+<main class="container">
+    <h2>Transação</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group mb-2">
+                <label for="valor">Valor</label>
+                <input type="number" step="0.01" [(ngModel)]="transacao.valor" class="form-control" id="valor">
+            </div>
+            <div class="form-group mb-2">
+                <label for="data">Data</label>
+                <input type="datetime-local" [(ngModel)]="transacao.data" class="form-control" id="data">
+            </div>
+            <div class="form-group mb-2">
+                <label for="descricao">Descrição</label>
+                <input type="text" [(ngModel)]="transacao.descricao" class="form-control" id="descricao">
+            </div>
+            <div class="form-group mb-2">
+                <label for="cliente">Cliente</label>
+                <select id="cliente" class="form-control" [(ngModel)]="transacao.cliente">
+                    <option [ngValue]="null">Selecione...</option>
+                    <option *ngFor="let cli of listaClientes" [ngValue]="cli">{{cli.nome}}</option>
+                </select>
+            </div>
+            <div class="form-group mb-2">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" class="form-control" [(ngModel)]="transacao.categoria">
+                    <option [ngValue]="null">Selecione...</option>
+                    <option *ngFor="let cat of listaCategorias" [ngValue]="cat">{{cat.nome}}</option>
+                </select>
+            </div>
+        </div>
+        <button (click)="salvar()" class="btn btn-primary m-2">Salvar</button>
+    </div>
+</main>
