@@ -1,1 +1,56 @@
-<p>relatorio works!</p>
+<main class="container">
+    <h2>Relatórios</h2>
+
+    <a routerLink="/relatorios/novo" class="btn btn-primary">Novo</a>
+    <a (click)="novo()" class="btn btn-primary">Novo</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Saldo Total</th>
+                <th>Simulação</th>
+                <th>Saldo por Categoria</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let relatorio of listaRelatorios">
+                <td>{{relatorio.id}}</td>
+                <td>{{relatorio.saldoTotal}}</td>
+                <td>
+                    <!-- Exibe o ID da simulação associada, se houver -->
+                    {{relatorio.simulacao?.id}}
+                </td>
+                <td>
+                    <ul>
+                        <li *ngFor="let cat of relatorio.saldoPorCategoria | keyvalue">
+                            {{cat.key}}: {{cat.value}}
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <a (click)="alterar(relatorio)" class="btn btn-secondary">Alterar</a>
+                    <a (click)="abrirConfirmacao(relatorio)" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="modal fade" #myModal tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Excluir relatório</h5>
+                </div>
+                <div class="modal-body">
+                    Confirmar a exclusão do relatório?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
