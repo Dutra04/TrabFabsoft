@@ -1,1 +1,12 @@
-<p>form-relatorio works!</p>
+<main class="container">
+    <h2>Relatório</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group mb-2">
+                <label for="saldoTotal">Saldo Total</label>
+                <input type="number" step="0.01" [(ngModel)]="relatorio.saldoTotal" class="form-control" id="saldoTotal">
+            </div>
+        </div>
+        <button (click)="salvar()" class="btn btn-primary m-2">Salvar</button>
+    </div>
+</main>

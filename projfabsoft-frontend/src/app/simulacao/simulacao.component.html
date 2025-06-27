@@ -1,1 +1,44 @@
-<p>simulacao works!</p>
+<main class="container">
+    <h2>Simulações</h2>
+
+    <a (click)="novo()" class="btn btn-primary">Novo</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Impacto Gasto Extra</th>
+                <th>Mês Referência</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let simulacao of listaSimulacoes">
+                <td>{{simulacao.id}}</td>
+                <td>{{simulacao.impactoGastoExtra}}</td>
+                <td>{{simulacao.mesReferencia | date:'short'}}</td>
+                <td>
+                    <a (click)="alterar(simulacao)" class="btn btn-secondary">Alterar</a>
+                    <a (click)="abrirConfirmacao(simulacao)" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="modal fade" #myModal tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Excluir simulação</h5>
+                </div>
+                <div class="modal-body">
+                    Confirmar a exclusão da simulação?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

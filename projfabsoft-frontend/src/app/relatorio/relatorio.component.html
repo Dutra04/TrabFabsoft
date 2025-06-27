@@ -1,7 +1,6 @@
 <main class="container">
     <h2>Relatórios</h2>
 
-    <a routerLink="/relatorios/novo" class="btn btn-primary">Novo</a>
     <a (click)="novo()" class="btn btn-primary">Novo</a>
 
     <table class="table">
@@ -19,7 +18,6 @@
                 <td>{{relatorio.id}}</td>
                 <td>{{relatorio.saldoTotal}}</td>
                 <td>
-                    <!-- Exibe o ID da simulação associada, se houver -->
                     {{relatorio.simulacao?.id}}
                 </td>
                 <td>
