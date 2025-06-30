@@ -1,10 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import * as bootstrap from 'bootstrap';
 import { Cliente } from '../model/cliente';
-import { ClienteService} from '../service/cliente.service';
+import { ClienteService } from '../service/cliente.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cliente',
@@ -16,15 +16,20 @@ import { Router} from '@angular/router';
 export class ClienteComponent {
     listaClientes: Cliente[] = [];
 
+    @ViewChild('myModal') modalElement!: ElementRef;
+    private modal!: bootstrap.Modal;
+
+    private clienteSelecionado!: Cliente;
+
     constructor(
-      private clienteService:ClienteService,
+      private clienteService: ClienteService,
       private router:Router
     ) {}
 
     novo(){
       this.router.navigate(['clientes/novo']);
     }
-    
+
     ngOnInit(){
       console.log("Carregando clientes...");
       this.clienteService.getClientes().subscribe(
@@ -37,36 +42,28 @@ export class ClienteComponent {
   alterar(cliente:Cliente){
       this.router.navigate(['clientes/alterar', cliente.id]);
   }
-
-  @ViewChild('myModal') modalElement!: ElementRef;
-  private modal!: bootstrap.Modal;
-
-  private clienteSelecionado!: Cliente;
-
-  abrirConfirmacao(cliente:Cliente){
-    this.clienteSelecionado = cliente;
-    this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
-    this.modal.show();
+  abrirConfirmacao(cliente:Cliente) {
+      this.clienteSelecionado = cliente;
+      this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
+      this.modal.show();
   }
 
-  fecharConfirmacao(){
+  fecharConfirmacao() {
     this.modal.hide();
   }
-
- confirmarExclusao(){
-      this.clienteService.excluirCliente(this.clienteSelecionado.id).subscribe(
+  confirmarExclusao() {
+    this.clienteService.excluirCliente(this.clienteSelecionado.id).subscribe(
         () => {
-          this.fecharConfirmacao();
-          this.clienteService.getClientes().subscribe(
-            clientes => {
-              this.listaClientes = clientes;
-            }
-          );
+            this.fecharConfirmacao();
+            this.clienteService.getClientes().subscribe(
+              clientes => {
+                this.listaClientes = clientes;
+              }
+            );
         },
-        erro => {
-          console.error('Erro ao excluir cliente:', erro);
+        error => {
+            console.error('Erro ao excluir cliente:', error);
         }
-      );
+    );
   }
-
 }
