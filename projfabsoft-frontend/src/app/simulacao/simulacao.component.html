@@ -9,7 +9,6 @@
                 <th>ID</th>
                 <th>Impacto Gasto Extra</th>
                 <th>Mês Referência</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -18,7 +17,7 @@
                 <td>{{simulacao.impactoGastoExtra}}</td>
                 <td>{{simulacao.mesReferencia | date:'short'}}</td>
                 <td>
-                    <a (click)="alterar(simulacao)" class="btn btn-secondary">Alterar</a>
+                    <a (click)="alterar(simulacao)" class="btn btn-primary">Alterar</a>
                     <a (click)="abrirConfirmacao(simulacao)" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>

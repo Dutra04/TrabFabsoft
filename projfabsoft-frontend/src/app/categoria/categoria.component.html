@@ -6,15 +6,17 @@
     <table class="table">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Nome</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let umaCategoria of listaCategorias">
+                <td>{{umaCategoria.id}}</td>
                 <td>{{umaCategoria.nome}}</td>
                 <td>
-                    <a (click)="alterar(umaCategoria)" class="btn btn-secondary">Alterar</a>
+                    <a (click)="alterar(umaCategoria)" class="btn btn-primary">Alterar</a>
                     <a (click)="abrirConfirmacao(umaCategoria)" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>

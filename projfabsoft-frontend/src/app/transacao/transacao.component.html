@@ -20,9 +20,9 @@
                 <td>{{transacao.data | date:'short'}}</td>
                 <td>{{transacao.descricao}}</td>
                 <td>{{transacao.cliente?.nome}}</td>
-                <td>{{transacao.categoria?.nome}}</td>
+                <td>{{transacao.categoria?.id}}</td>
                 <td>
-                    <a (click)="alterar(transacao)" class="btn btn-secondary">Alterar</a>
+                    <a (click)="alterar(transacao)" class="btn btn-primary">Alterar</a>
                     <a (click)="abrirConfirmacao(transacao)" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
