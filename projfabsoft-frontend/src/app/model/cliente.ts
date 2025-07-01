@@ -4,4 +4,5 @@ export class Cliente {
     endereco: string;
     telefone: string;
     email: string;
+    tarefas: string[];
 }

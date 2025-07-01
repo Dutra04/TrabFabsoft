@@ -66,4 +66,8 @@ export class ClienteComponent {
         }
     );
   }
+
+  detalhar(cliente: Cliente) {
+    this.router.navigate(['clientes/detalhes', cliente.id]);
+  }
 }

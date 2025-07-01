@@ -9,11 +9,13 @@ import { RelatorioComponent } from './relatorio/relatorio.component';
 import { FormRelatorioComponent } from './form-relatorio/form-relatorio.component';
 import { SimulacaoComponent } from './simulacao/simulacao.component';
 import { FormSimulacaoComponent } from './form-simulacao/form-simulacao.component';
+import { ClienteDetalhesComponent } from './cliente-detalhes/cliente-detalhes.component';
 
 export const routes: Routes = [
     {path: 'clientes', component: ClienteComponent},
     {path: 'clientes/novo', component: FormClienteComponent},
     {path: 'clientes/alterar/:id', component: FormClienteComponent},
+    {path: 'clientes/detalhes/:id', component: ClienteDetalhesComponent},
     
     {path: 'categorias', component: CategoriaComponent},
     {path: 'categorias/novo', component: FormCategoriaComponent},

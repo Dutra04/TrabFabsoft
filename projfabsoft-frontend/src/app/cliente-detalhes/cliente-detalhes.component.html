@@ -1,0 +1,58 @@
+<main class="container">
+    
+    <div class="card">
+        <div class="card-body">
+
+            <h2>Cliente: {{ cliente.nome }}</h2>
+            
+            <h4>Endereço: {{cliente.endereco}}</h4>
+            <h4>Telefone: {{cliente.telefone}}</h4>
+            <h4>E-mail: {{cliente.email}}</h4>
+
+            <h2>Tarefas:</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tarefa of cliente.tarefas">
+                        <td>{{tarefa}}</td>
+        
+                        <td>
+                        
+                            <!-- <a (click)="abrirConfirmacao(umCliente)"
+                            class="btn btn-danger">Excluir Tarefa</a> -->
+                        
+                        </td>   
+                    </tr>
+                </tbody>
+            </table>
+        
+            <div class="card-footer">
+                <button type="button" class="btn btn-secondary" (click)="adicionarTarefa()">Adicionar Tarefa</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" #myModal tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title">Adicionar Tarefa</h5>
+               </div>
+               <div class="modal-body">
+                   Descrição da Tarefa:
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" (click)="fecharTarefa()">Cancelar</button>
+                   <button type="button" class="btn btn-primary" (click)="confirmarTarefa()">Sim</button>
+               </div>
+           </div>
+        </div>
+   </div>  
+
+</main>
+    
