@@ -1,5 +1,7 @@
 package br.univille.projfabsoftcashflow.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +20,8 @@ public class Cliente {
     private String telefone;
     @Column(length = 1000, nullable = false)   
     private String email;
+    @Column()   
+    private List<String> tarefas;
 
     public long getId() {
         return id;
