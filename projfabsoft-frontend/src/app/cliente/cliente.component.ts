@@ -43,9 +43,9 @@ export class ClienteComponent {
       this.router.navigate(['clientes/alterar', cliente.id]);
   }
   abrirConfirmacao(cliente:Cliente) {
-      this.clienteSelecionado = cliente;
-      this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
-      this.modal.show();
+    this.clienteSelecionado = cliente;
+    this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
+    this.modal.show();
   }
 
   fecharConfirmacao() {

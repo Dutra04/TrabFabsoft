@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class RelatorioComponent {
   listaRelatorios: Relatorio[] = [];
+  
 
   constructor(
     private relatorioService: RelatorioService,
