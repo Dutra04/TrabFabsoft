@@ -17,13 +17,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let tarefa of cliente.tarefas">
+                    <tr *ngFor="let tarefa of cliente.tarefas; let i = index" >
                         <td>{{tarefa}}</td>
         
                         <td>
                         
-                            <!-- <a (click)="abrirConfirmacao(umCliente)"
-                            class="btn btn-danger">Excluir Tarefa</a> -->
+                            <a (click)="excluirTarefa(i)"
+                            class="btn btn-danger">Excluir Tarefa</a>
                         
                         </td>   
                     </tr>
@@ -44,7 +44,11 @@
                    <h5 class="modal-title">Adicionar Tarefa</h5>
                </div>
                <div class="modal-body">
-                   Descrição da Tarefa:
+                   <label for="txtNome">Descrição da Tarefa:</label>
+                   <input type="text" 
+                       [(ngModel)]="tarefaRascunho"
+                       class="form-control"
+                       id="txtNome">
                </div>
                <div class="modal-footer">
                    <button type="button" class="btn btn-secondary" (click)="fecharTarefa()">Cancelar</button>

@@ -5,10 +5,11 @@ import { Cliente } from '../model/cliente';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import * as bootstrap from 'bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cliente-detalhes',
-  imports: [HttpClientModule, CommonModule],
+  imports: [HttpClientModule, CommonModule, FormsModule],
   templateUrl: './cliente-detalhes.component.html',
   styleUrl: './cliente-detalhes.component.css',
   providers: [ClienteService, Router]
@@ -16,7 +17,7 @@ import * as bootstrap from 'bootstrap';
 export class ClienteDetalhesComponent {
   cliente: Cliente;
 
-  
+  tarefaRascunho: string;
 
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
@@ -27,34 +28,47 @@ export class ClienteDetalhesComponent {
     private router: Router,
     private activeRouter: ActivatedRoute
   ) {
-      const id = this.activeRouter.snapshot.paramMap.get('id');
-      if (id) {
-        this.clienteService.getClienteById(id).subscribe(cliente => {
-          this.cliente = cliente;
-        });
-      }
+    const id = this.activeRouter.snapshot.paramMap.get('id');
+    if (id) {
+      this.clienteService.getClienteById(id).subscribe(cliente => {
+        this.cliente = cliente;
+      });
+    }
   }
-  
+
 
   adicionarTarefa() {
-      this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
-      this.modal.show();
-    }
-  
-    fecharTarefa() {
-      this.modal.hide();
-    }
+    this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
+    this.modal.show();
+  }
 
-    confirmarTarefa() {
-      console.log(this.cliente.tarefas)
-      //this.cliente.tarefas.concat(["Nova Tarefa"])
+  fecharTarefa() {
+    this.modal.hide();
+  }
 
-      this.clienteService.saveCliente(this.cliente)
-       .subscribe(resultado => {
-          
-       });
+  confirmarTarefa() {
+    this.cliente.tarefas.push(this.tarefaRascunho)
+    this.tarefaRascunho = ""
 
-      this.modal.hide();
+    console.log(this.cliente.tarefas)
+
+    this.clienteService.saveCliente(this.cliente)
+      .subscribe(resultado => {
+
+      });
+
+    this.modal.hide();
+  }
+
+  excluirTarefa(index: number) {
+    if(index > -1) {
+      this.cliente.tarefas.splice(index, 1);
     }
+    
+    this.clienteService.saveCliente(this.cliente)
+    .subscribe(resultado => {
+
+    });
+  }
 
 }

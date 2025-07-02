@@ -23,6 +23,14 @@ public class Cliente {
     @Column()   
     private List<String> tarefas;
 
+    public List<String> getTarefas() {
+        return tarefas;
+    }
+
+    public void setTarefas(List<String> tarefas) {
+        this.tarefas = tarefas;
+    }
+
     public long getId() {
         return id;
     }

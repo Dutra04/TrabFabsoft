@@ -70,6 +70,7 @@ public class ClienteController {
         clienteAntigo.setEndereco(cliente.getEndereco());
         clienteAntigo.setTelefone(cliente.getTelefone());
         clienteAntigo.setEmail(cliente.getEmail());
+        clienteAntigo.setTarefas(cliente.getTarefas());
 
         service.save(clienteAntigo);
         return new ResponseEntity<Cliente>(clienteAntigo, HttpStatus.OK);
