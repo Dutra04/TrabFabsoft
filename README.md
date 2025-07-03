@@ -1,71 +1,28 @@
-# Fábrica de Software 2025/1
+Sistema de Gestão de Projetos (Tipo Trello) Objetivo: Criar uma plataforma de gerenciamento de projetos onde os usuários podem criar tarefas, categorizar e atribuir prazos, prioridades e responsáveis.
 
-## Repositório dos alunos
-- [Repos](https://gist.github.com/d4e37df9f6772173110603fc8bf90b84.git)
+Funcionalidades:
 
-## Propostas de projeto
+Criação de cargos Direcionar demandas Criação de projetos e tarefas. Adicionar responsáveis e prazos.
 
-- Nome do sistema: Sistema de Gestão de Finanças
-  - Registro de Transações: Adicionar entradas e saídas com valor, data, descrição e categoria
-  - Categorização: Permitir que o usuário crie e gerencie categorias 
-  - Relatórios: Exibir saldo total e gastos por categoria 
-  - Armazenagem de Dados: Salvar os Dados em um arquivo 
+Priorizar tarefas e gerar relatórios. Interface gráfica com arrastar e soltar (drag and drop) para organizar as tarefas.
 
-<s>
+Criação de Tracks para Automações Implementação de tracks para facilitar a automação de processos dentro dos cards, garantindo que as tarefas sejam organizadas de maneira eficiente e padronizada.
+Comentários em Tarefas Realizadas Possibilidade de adicionar comentários automáticos ou manuais em determinadas tarefas realizadas, garantindo um histórico claro de ações e atualizações dentro dos cards.
+Automação de Datas para Próximas Tarefas Definição automática de prazos para próximas tarefas com base nas automações configuradas nos tracks, permitindo que as tarefas futuras sejam criadas com datas previamente estabelecidas.
+Espaço Personalizado para Informações do Cliente Adição de um campo expandido nos cards para armazenar informações essenciais sobre o cliente, como: ● Instagram ● Nome ● Persona (https://br.peoplexperience.com/) - (https://www.youtube.com/@CustomerX) ● Outros dados relevantes para acompanhamento
+Dashboard Personalizado por Usuário Criação de um painel de controle individual com métricas e informações essenciais, incluindo: ● Cards em atraso ● Tarefas pendentes ● Tarefas agendadas ● Gráficos mostrando a cobertura total de clientes em dia ● Outros indicadores de desempenho e produtividade
+Integração com Planilhas (Excel e Google Sheets) Habilitação de importação automática de informações específicas de planilhas para o Trello, garantindo um fluxo de dados eficiente entre as ferramentas utilizadas pelo time. Estas melhorias proporcionarão um Trello mais estruturado, automatizado e funcional para o time, facilitando a gestão de tarefas e o acompanhamento de clientes de forma estratégica
+Livro Eng Software Moderna
+Eng. Soft Moderna - Requisitos
 
-## Livro Eng Software Moderna
-[Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
-
-## Histórias de Usuário
-
-- Como um **Usuário**, desejo cadastrar meus dados pessoais (nome, endereço, telefone, e-mail) para manter meu perfil atualizado.
-- Como um **Usuário**, desejo registrar uma **Transação** informando valor, data, descrição e selecionar uma **Categoria** para controlar minhas finanças.
-- Como um **Usuário**, desejo criar, editar e excluir **Categorias** para organizar melhor minhas transações.
-- Como um **Usuário**, desejo visualizar uma lista de todas as minhas **Transações** para acompanhar meu histórico financeiro.
-- Como um **Usuário**, desejo editar ou excluir uma **Transação** já registrada para corrigir informações ou remover lançamentos indevidos.
-- Como um **Usuário**, desejo visualizar relatórios de saldo total e de gastos por **Categoria** para analisar minha situação financeira.
-- Como um **Usuário**, desejo que meus dados e transações sejam salvos automaticamente e carregados ao abrir o sistema para não perder informações.
-- Como um **Usuário**, desejo simular o impacto de um gasto extra em um mês específico para planejar melhor meu orçamento.
-
-## Comandos do Git
-
-### Instalação
-[Git Bash](https://git-scm.com/downloads)
-
-### Configuração inicial
-
-```
-git config --global user.name "NOME DO USUARIO NO GITHUB"
-git config --global user.email "EMAIL DA CONTA DO GITHUB"
-```
-### Tipos de mensagens do commit
-
-- feat: (new feature for the user, not a new feature for build script)
-- fix: (bug fix for the user, not a fix to a build script)
-- docs: (changes to the documentation)
-- style: (formatting, missing semi colons, etc; no production code change)
-- refactor: (refactoring production code, eg. renaming a variable)
-- test: (adding missing tests, refactoring tests; no production code change)
-- chore: (updating grunt tasks etc; no production code change)
-
-### Commit e Push
-
-```
-git add .
-git commit -m "tipo: o que foi feito"
-git push -u origin main
-```
-
-### Ambiente de desenvolvimento JAVA
-[Eclipse Adoptium](https://adoptium.net/)
-[Microsoft OpenJDK](https://www.microsoft.com/openjdk)
-[AWS CORRETTO](https://aws.amazon.com/pt/corretto/)
-[VSCode](https://code.visualstudio.com/download)
-[Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-
-
-- JRE - Java Runtime Environment
-   - Java Virtual Machine JVM 
-     - java.exe / javaw.exe
-- JDK - Java Development Kit
-  - Compilar o java (javac.exe)
+Histórias de Usuário
+Como um usuário, eu gostaria de criar e organizar minhas tarefas de forma personalizada
+Como um Usuário, eu gostaria de implementar tracks para rastrear as demandas
+Como um Usuário, eu gostaria de categorizar tarefas e atribuir prazos
+Como um Usuário, eu gostaria de definir atividades como prioridades
+Como um Usuário, eu gostaria de atribuir pessoas responsáveia a cada atividade
+Como um Usuário, eu gostaria de poder fazer comentários em cada card ou tarefa
+Como um Usuário, eu gostaria que fossem definidos prazos automaticamente para as atividades
+Como um Usuário, eu gostaria que tivesse um dashboard personalizado relacionado a persona (cliente)
+Como um Usuário, eu gostaria de ter mais opções de personalização aos cards, dashboards (em relação ao trello)
+Como um Usuário, eu gostaria de poder integrar planilhas para um melhor fluxo de informação
